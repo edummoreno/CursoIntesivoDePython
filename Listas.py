@@ -1,72 +1,91 @@
 import string
 
-bikes = ['caloi','eletrica','com marcha']
+# ===========================
+#  Trabalhando com Listas
+# ===========================
 
-print(bikes)
-print(bikes[0])
-print(bikes[0].title())
-print(bikes[-1])
+# Definição de uma lista de bicicletas
+bikes = ['caloi', 'eletrica', 'com marcha']
 
-nome = ['Eduardo','João','Jesus']
+print(bikes)         # Exibe toda a lista
+print(bikes[0])      # Exibe o primeiro item da lista
+print(bikes[0].title())  # Exibe o primeiro item com a primeira letra maiúscula
+print(bikes[-1])     # Exibe o último item da lista
 
-print("Bem vindo ",nome[0])
-print("Bem vindo ",nome[1])
-print("Bem vindo ",nome[2])
+# ===========================
+#  Acessando Itens da Lista
+# ===========================
 
-#modificando lista
+nome = ['Eduardo', 'João', 'Jesus']
 
-moto = ['yamaha','honda','nike']
+print("Bem vindo ", nome[0])
+print("Bem vindo ", nome[1])
+print("Bem vindo ", nome[2])
 
+# ===========================
+#  Modificando Listas
+# ===========================
+
+moto = ['yamaha', 'honda', 'nike']
+
+# Modificando um item da lista
 moto[2] = 'toyota'
-
 print(moto[2])
 
-#adicionando
+# ===========================
+#  Adicionando Elementos
+# ===========================
 
+# Adicionando um item ao final da lista
 moto.append('ducati')
-
 print(moto[3])
 
-#inserindo 
-
-moto.insert(1,'mistubishi')
-
+# Inserindo um item em uma posição específica
+moto.insert(1, 'mistubishi')
 print(moto[1])
 
-#deletando
-del moto[1]
+# ===========================
+#  Removendo Elementos
+# ===========================
 
+# Deletando um item da lista pelo índice
+del moto[1]
 print(moto)
 
-#removendo com pop() #remove o ultmo item da lista 
-pop_moto = moto.pop() # salva o item removido
-
+# Removendo com pop() (remove o último item da lista e armazena em uma variável)
+pop_moto = moto.pop()
 print(moto)
 print(pop_moto)
 
-#qualquer posiçao
+# Removendo item de uma posição específica
 pop_moto = moto.pop(0)
 print(pop_moto)
 
-#removendo elemento por valor
-#remove_moto = moto.remove('ducati')
+# Removendo elemento por valor (comentado para revisão)
+# remove_moto = moto.remove('ducati')
+# print(remove_moto)  # revisar
 
-#print(remove_moto)  #revisar
+# ===========================
+#  Ordenação de Listas
+# ===========================
 
-#ordenando listas
+cars = ['bmw', 'audi', 'toyota', 'subaru']
 
-cars = ['bmw','audi','toyota','subaru']
+print(cars)              # Lista original
+print(sorted(cars))      # Lista ordenada temporariamente
+cars.sort()              # Ordena permanentemente em ordem alfabética
 print(cars)
-print(sorted(cars))
-cars.sort()
+
+cars.reverse()           # Inverte a ordem da lista
 print(cars)
 
-cars.reverse()
-print(cars)
+# ===========================
+#  Trabalhando com Índices
+# ===========================
 
-#evitando erros ao trabalhar com listas
-#sempre olhe o tamanho de uma lista para verificar os indices corretos, lembrese que o indice começa no 0 
-# indice[-1] exibe o ultimo item de uma lista
-print(len(cars))
+# Importante: listas começam no índice 0
+# Índice negativo [-1] exibe o último item da lista
+print(len(cars))  # Exibe o tamanho da lista
 
-
+# Observação:
+# Listas em Python são definidas utilizando colchetes []
