@@ -97,3 +97,18 @@ if 'portuguesa' in sabor_pizza:
 # Exibindo os sabores disponíveis
 for sabor in sabor_pizza:
     print(f"{sabor}")
+
+
+#lista de dicionarios
+
+alien_0 = {'color': 'green', 'points':5}
+alien_1 = {'color': 'yellow', 'points':10}
+alien_2 = {'color': 'red', 'points': 15}
+
+aliens = [alien_0,alien_1,alien_2]
+
+print(aliens)
+
+print(f"total number of aliens: {len(aliens)}")
+
+#uma lista em um dicionario
