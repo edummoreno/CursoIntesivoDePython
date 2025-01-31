@@ -24,3 +24,5 @@ class Dog:
         Este é um método que imprime uma mensagem indicando que o cachorro rolou.
         """
         print(f"{self.name} rolled over!")  # Mensagem formatada com o nome do cachorro.
+
+
