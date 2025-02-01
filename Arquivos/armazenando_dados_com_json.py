@@ -1,14 +1,16 @@
 from pathlib import Path
 import json
 
-#lista
-numeros = [2,3,5,7,11,13]
+# Lista de números primos
+numeros = [2, 3, 5, 7, 11, 13]
 
-#variavel recebe caminho do numeros.json
-caminho = Path('numeros.json')
+# Criando um objeto Path para o arquivo 'numeros.json'
+caminho_arquivo = Path('numeros.json')
 
-#para criar um json utilize o metodo json.dumps()
-conteudo = json.dumps(numeros)
+# Serializando a lista para um formato JSON legível
+conteudo_json = json.dumps(numeros, indent=4)  # O parâmetro 'indent' melhora a legibilidade do JSON
 
-#para criar um arquivo utilize o metodo write_text()
-caminho.write_text(conteudo)
+# Escrevendo o conteúdo JSON no arquivo
+caminho_arquivo.write_text(conteudo_json)
+
+print(f"Os números foram salvos com sucesso em {caminho_arquivo}")

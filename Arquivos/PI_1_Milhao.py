@@ -1,17 +1,23 @@
 from mpmath import mp
 
+# Configura a precisão desejada. O mpmath permite definir a precisão em 'dps' (dígitos de precisão).
+# Aqui estamos configurando para 1 milhão de dígitos de precisão.
+mp.dps = 1000000
 
-# configura a precisao desejada. O mpmath permite definir a precisão em 'dps' (dígitos de precisão).
-mp.dps = 1000000 #O mpmath permite definir a precisão em 'dps' (dígitos de precisão).O mpmath permite definir a precisão em 'dps' (dígitos de precisão).
-
-# Calcula pi com precisão configurada
+# Calcula π com a precisão configurada.
 pi_calculated = mp.pi
 
-#converte o valor de pi para uma string.
+# Converte o valor de π para uma string.
+# A string incluirá o dígito '3' e o ponto decimal, além dos dígitos decimais.
 pi_string = str(pi_calculated)
 
-with open('pi_milhao_decimais.txt','w') as file:
-    file.write(pi_string)
-
-# Escreve o valor de pi no arquivo.
-print("Arquivo com 1 milhao de casa decimais foi criado")
+# Tenta escrever o valor de π no arquivo.
+try:
+    with open('pi_milhao_decimais.txt', 'w', encoding='utf-8') as file:
+        file.write(pi_string)
+except IOError as e:
+    # Informa ao usuário se ocorrer um erro de E/S (entrada/saída), como problemas de escrita no arquivo.
+    print(f"Ocorreu um erro ao escrever o arquivo: {e}")
+else:
+    # Se a escrita for bem-sucedida, informa ao usuário.
+    print("Arquivo com 1 milhão de casas decimais de π foi criado com sucesso.")

@@ -1,22 +1,32 @@
-#continuação da calculadora
-print("me de dois numeros, para fazer a divisão")
-print("Enter 'q' para sair")
-
-
-#calculadora de divisão simples utilizando try except para tratamento de erro
+# Calculadora de divisão simples com tratamento de erro usando try/except
 
 while True:
-    primeiro_numero = int(input("\nPrimeiro Numero:"))
-    if primeiro_numero == 'q':
+    # Solicita ao usuário para inserir o primeiro número
+    primeiro_numero = input("\nPrimeiro número: ")
+    if primeiro_numero.lower() == 'q':  # Verifica se o usuário quer sair
         break
 
-    segundo_numero = int(input("\nSegundo Numero: "))
-    if segundo_numero == 'q':
+    # Solicita ao usuário para inserir o segundo número
+    segundo_numero = input("\nSegundo número: ")
+    if segundo_numero.lower() == 'q':  # Verifica se o usuário quer sair
         break
 
     try:
-        resposta = primeiro_numero / segundo_numero
-    except:
-        print("nao foi possivel realizar essa divisao")
+        # Tenta converter as entradas para inteiros e realizar a divisão
+        primeiro_numero_int = int(primeiro_numero)
+        segundo_numero_int = int(segundo_numero)
+        resposta = primeiro_numero_int / segundo_numero_int
+    except ValueError:
+        # Captura o erro caso a entrada não possa ser convertida para um inteiro
+        print("Você deve inserir um número válido ou 'q' para sair.")
+    except ZeroDivisionError:
+        # Captura o erro caso o segundo número seja zero
+        print("Não é possível dividir por zero.")
+    except Exception as e:
+        # Captura qualquer outro tipo de exceção e imprime a mensagem de erro
+        print(f"Ocorreu um erro inesperado: {e}")
     else:
-        print(f"\n {primeiro_numero} dividido por {segundo_numero} é {resposta}")
+        # Se a divisão for bem-sucedida, imprime o resultado
+        print(f"\n{primeiro_numero_int} dividido por {segundo_numero_int} é {resposta}")
+
+print("Calculadora encerrada.")
